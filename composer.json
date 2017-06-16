@@ -1,0 +1,14 @@
+{
+	"name": "nystudio107/fastcgicachebust",
+	"description": "Bust the Nginx FastCGI Cache when entries are saved or created.",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "nystudio107",
+			"homepage": "https://nystudio107.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

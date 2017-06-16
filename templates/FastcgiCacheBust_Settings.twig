@@ -1,0 +1,26 @@
+{#
+/**
+ * FastCGI Cache Bust plugin for Craft CMS
+ *
+ * FastCGI Cache Bust Settings.twig
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2017 nystudio107
+ * @link      https://nystudio107.com
+ * @package   FastcgiCacheBust
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% includeCssResource "fastcgicachebust/css/FastcgiCacheBust_Style.css" %}
+{% includeJsResource "fastcgicachebust/js/FastcgiCacheBust_Script.js" %}
+
+{{ forms.textField({
+    label: 'FastCGI Cache Path',
+    instructions: 'Enter the full absolute path to the FastCGI Cache directory.',
+    id: 'cachePath',
+    name: 'cachePath',
+    value: settings['cachePath']})
+}}
