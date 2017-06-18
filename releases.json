@@ -1,5 +1,13 @@
 [
     {
+        "version": "1.0.1",
+        "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
+        "date": "2017-06-18T22:35:46.832Z",
+        "notes": [
+            "[Added] Added multi-environment config overrides via `fastcgicachebust.php`"
+        ]
+    },
+    {
         "version": "1.0.0",
         "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
         "date": "2017-06-15T22:35:46.832Z",
