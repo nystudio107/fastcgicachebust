@@ -101,7 +101,7 @@ class FastcgiCacheBustPlugin extends BasePlugin
     }
 
     /**
-     * @return array
+     * @inheritdoc
      */
     protected function defineSettings()
     {
@@ -111,7 +111,26 @@ class FastcgiCacheBustPlugin extends BasePlugin
     }
 
     /**
-     * @return mixed
+     * @inheritdoc
+     */
+    public function getSettings()
+    {
+        $settings = parent::getSettings();
+        $base = $this->defineSettings();
+
+        foreach ($base as $key => $row) {
+            $override = craft()->config->get($key, 'fastcgicachebust');
+
+            if (!is_null($override) && !empty($override)) {
+                $settings->$key = $override;
+            }
+        }
+
+        return $settings;
+    }
+
+    /**
+     * @inheritdoc
      */
     public function getSettingsHtml()
     {
@@ -121,9 +140,7 @@ class FastcgiCacheBustPlugin extends BasePlugin
     }
 
     /**
-     * @param mixed $settings  The plugins's settings
-     *
-     * @return mixed
+     * @inheritdoc
      */
     public function prepSettings($settings)
     {
