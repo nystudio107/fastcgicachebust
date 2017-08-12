@@ -1,5 +1,13 @@
 [
     {
+        "version": "1.0.2",
+        "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
+        "date": "2017-08-12T22:35:46.832Z",
+        "notes": [
+            "[Added] Added 'FastCGI Cache' to the list of things that can be cleared via Craft's Clear Caches tool"
+        ]
+    },
+    {
         "version": "1.0.1",
         "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
         "date": "2017-06-18T22:35:46.832Z",

@@ -65,7 +65,7 @@ class FastcgiCacheBustPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.0.1';
+        return '1.0.2';
     }
 
     /**
@@ -134,9 +134,9 @@ class FastcgiCacheBustPlugin extends BasePlugin
      */
     public function getSettingsHtml()
     {
-       return craft()->templates->render('fastcgicachebust/FastcgiCacheBust_Settings', array(
-           'settings' => $this->getSettings()
-       ));
+        return craft()->templates->render('fastcgicachebust/FastcgiCacheBust_Settings', [
+            'settings' => $this->getSettings(),
+        ]);
     }
 
     /**
@@ -149,4 +149,26 @@ class FastcgiCacheBustPlugin extends BasePlugin
         return $settings;
     }
 
+    /**
+     * Adds the FastCGI Cache path to the list of things the Clear Caches tool can delete.
+     *
+     * @return array
+     */
+    public function registerCachePaths()
+    {
+        $cachePaths = array();
+        $settings = $this->getSettings();
+        if (!empty($settings)) {
+            if (!empty($settings->cachePath)) {
+                $cachePaths = array_merge(
+                    $cachePaths,
+                    array(
+                        $settings->cachePath => Craft::t('FastCGI Cache'),
+                    )
+                );
+            }
+        }
+
+        return $cachePaths;
+    }
 }
