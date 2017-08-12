@@ -16,7 +16,7 @@ namespace Craft;
 class FastcgiCacheBustService extends BaseApplicationComponent
 {
     /**
-     * Clears the entirity of the FastCGI Cache
+     * Clears the entirety of the FastCGI Cache
      */
     public function clearAll()
     {
