@@ -30,6 +30,8 @@ Click on the gear icon next to the plugin to configure it by adding the full abs
 
 FastCGI Cache Bust listens for elements being saved, and busts the entire FastCGI Cache automatically when that happens.
 
+You can also manually clear the FastCGI Cache via Craft's 'Clear Caches' tool
+
 ## FastCGI Cache Bust Roadmap
 
 Some things to do, and ideas for potential features:
