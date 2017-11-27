@@ -1,5 +1,14 @@
 [
     {
+        "version": "1.0.3",
+        "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
+        "date": "2017-11-27T22:35:46.832Z",
+        "notes": [
+            "[Improved] Don't bust the FastCGI Cache unless the element being saved is ENABLED or LIVE",
+            "[Improved] Don't bust the FastCGI Cache for certain custom ElementTypes"
+        ]
+    },
+    {
         "version": "1.0.2",
         "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
         "date": "2017-08-12T22:35:46.832Z",

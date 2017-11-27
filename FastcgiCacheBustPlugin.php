@@ -22,9 +22,28 @@ class FastcgiCacheBustPlugin extends BasePlugin
     {
         parent::init();
         craft()->on('elements.onSaveElement', function (Event $event) {
+            /** @var BaseElementModel $element */
             $element = $event->params['element'];
             $isNewElement = $event->params['isNewElement'];
-            craft()->fastcgiCacheBust->clearAll();
+            $bustCache = true;
+            // Only bust the cache if the element is ENABLED or LIVE
+            if (($element->getStatus() != BaseElementModel::ENABLED) && ($element->getStatus() != EntryModel::LIVE)) {
+                $bustCache = false;
+            }
+            // Only bust the cache if it's not certain excluded element types
+            $elemType = $element->getElementType();
+            if (($elemType == 'SproutSeo_Redirect') || ($elemType == 'PushNotifications_Device')) {
+                $bustCache = false;
+            }
+
+            if ($bustCache) {
+                FastcgiCacheBustPlugin::log(
+                    "Cache busted due to saving: " . $elemType . " - " . $element->getTitle(),
+                    LogLevel::Info,
+                    true
+                );
+                craft()->fastcgiCacheBust->clearAll();
+            }
         });
     }
 
@@ -65,7 +84,7 @@ class FastcgiCacheBustPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.0.2';
+        return '1.0.3';
     }
 
     /**
