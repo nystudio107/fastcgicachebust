@@ -179,12 +179,16 @@ class FastcgiCacheBustPlugin extends BasePlugin
         $settings = $this->getSettings();
         if (!empty($settings)) {
             if (!empty($settings->cachePath)) {
-                $cachePaths = array_merge(
-                    $cachePaths,
-                    array(
-                        $settings->cachePath => Craft::t('FastCGI Cache'),
-                    )
-                );
+                $cacheDirs = explode(',', $settings->cachePath);
+                foreach ($cacheDirs as $cacheDir) {
+                    $cacheDir = trim($cacheDir);
+                    $cachePaths = array_merge(
+                        $cachePaths,
+                        [
+                            $cacheDir => Craft::t('FastCGI Cache'). ' '.$cacheDir,
+                        ]
+                    );
+                }
             }
         }
 

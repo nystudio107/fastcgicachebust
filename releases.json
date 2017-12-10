@@ -1,5 +1,13 @@
 [
     {
+        "version": "1.0.4",
+        "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
+        "date": "2017-12-10T22:35:46.832Z",
+        "notes": [
+            "[Added] You can have more than one cache to have it clear by separating the paths with a comma (`,`) in the config settings"
+        ]
+    },
+    {
         "version": "1.0.3",
         "downloadUrl": "https://github.com/nystudio107/fastcgicachebust/archive/master.zip",
         "date": "2017-11-27T22:35:46.832Z",

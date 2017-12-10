@@ -23,10 +23,13 @@ class FastcgiCacheBustService extends BaseApplicationComponent
         $settings = craft()->plugins->getPlugin('fastcgicachebust')->getSettings();
         if (!empty($settings)) {
             if (!empty($settings->cachePath)) {
-                $result = IOHelper::clearFolder($settings->cachePath, false);
-                Craft::log("FastCGI Cache busted: `" . $settings->cachePath . "` - " . $result, LogLevel::Info, false);
+                $cacheDirs = explode(',', $settings->cachePath);
+                foreach ($cacheDirs as $cacheDir) {
+                    $cacheDir = trim($cacheDir);
+                    $result = IOHelper::clearFolder($cacheDir, false);
+                    Craft::log("FastCGI Cache busted: `".$cacheDir."` - ".$result, LogLevel::Info, false);
+                }
             }
         }
     }
-
 }
