@@ -24,7 +24,7 @@ Check out the article (Static Page Caching with Craft CMS)[https://nystudio107.c
 
 ## Configuring FastCGI Cache Bust
 
-Click on the gear icon next to the plugin to configure it by adding the full absolute path to your Nginx FastCGI Cache directory.
+Click on the gear icon next to the plugin to configure it by adding the full absolute path to your Nginx FastCGI Cache directory. If you require more than one FastCGI Cache directory cleared, separate the paths with a comma (`,`).
 
 ## Using FastCGI Cache Bust
 
