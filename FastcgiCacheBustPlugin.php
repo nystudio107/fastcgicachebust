@@ -167,7 +167,7 @@ class FastcgiCacheBustPlugin extends BasePlugin
 
         return $settings;
     }
-    
+
     /**
      * Adds the FastCGI Cache path to the list of things the Clear Caches tool can delete.
      *
