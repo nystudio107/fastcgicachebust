@@ -1,5 +1,9 @@
 # FastCGI Cache Bust Changelog
 
+## 1.0.4 -- 2017.12.10
+### Added
+* You can have more than one cache to have it clear by separating the paths with a comma (`,`) in the config settings
+
 ## 1.0.3 -- 2017.11.27
 ### Added
 * Don't bust the FastCGI Cache unless the element being saved is ENABLED or LIVE
