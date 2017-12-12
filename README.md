@@ -20,7 +20,7 @@ FastCGI Cache Bust works on Craft 2.5.x and Craft 2.6.x.
 
 FastCGI Cache Bust is a simple plugin that clears your entire FastCGI Cache any time an entry is saved. This is somewhat of a scortched earth approach to cache invalidation, but it ensure cache coherency.
 
-Check out the article (Static Page Caching with Craft CMS)[https://nystudio107.com/blog/static-caching-with-craft-cms] for details on how to set up FastCGI Cache on your website.
+Check out the article [Static Page Caching with Craft CMS](https://nystudio107.com/blog/static-caching-with-craft-cms) for details on how to set up FastCGI Cache on your website.
 
 ## Configuring FastCGI Cache Bust
 
